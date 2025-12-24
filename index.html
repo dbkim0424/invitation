@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 Christmas Home Party 2025 🎅</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <h1 class="title">🎄 Christmas Home Party 2025 🎄</h1>
+            <p class="subtitle">Join us for a magical evening of joy, laughter, and holiday cheer!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card invitation-details">
+            <h2>📅 Party Details</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="icon">📅</span>
+                    <div>
+                        <strong>Date:</strong>
+                        <p>December 25th, 2025</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">⏰</span>
+                    <div>
+                        <strong>Time:</strong>
+                        <p>6:00 PM - 11:00 PM</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <strong>Location:</strong>
+                        <p>123 Christmas Lane, North Pole</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">🎁</span>
+                    <div>
+                        <strong>Dress Code:</strong>
+                        <p>Festive & Cozy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card schedule">
+            <h2>🎉 Party Schedule</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time">6:00 PM</span>
+                    <span class="event">🎄 Welcome & Greetings</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">6:30 PM</span>
+                    <span class="event">🍽️ Dinner & Appetizers</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">7:30 PM</span>
+                    <span class="event">🎮 Christmas Games</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">8:30 PM</span>
+                    <span class="event">🎁 Secret Santa Gift Exchange</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">9:30 PM</span>
+                    <span class="event">🎵 Christmas Karaoke</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">10:30 PM</span>
+                    <span class="event">🍰 Desserts & Farewell</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card rsvp-section">
+            <h2>✉️ RSVP</h2>
+            <p class="rsvp-message">Please let us know if you can make it!</p>
+            <form id="rsvpForm" class="rsvp-form">
+                <div class="form-group">
+                    <label for="guestName">Your Name:</label>
+                    <input type="text" id="guestName" name="guestName" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="guestEmail">Email:</label>
+                    <input type="email" id="guestEmail" name="guestEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="attendance">Will you attend?</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Select...</option>
+                        <option value="yes">✅ Yes, I'll be there!</option>
+                        <option value="maybe">🤔 Maybe</option>
+                        <option value="no">❌ Sorry, can't make it</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests:</label>
+                    <input type="number" id="guests" name="guests" min="1" max="5" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="dietaryRestrictions">Dietary Restrictions:</label>
+                    <textarea id="dietaryRestrictions" name="dietaryRestrictions" rows="3" placeholder="Any allergies or dietary preferences?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send RSVP 🎅</button>
+            </form>
+        </section>
+
+        <section class="card guest-list-section">
+            <h2>👥 Guest List</h2>
+            <p class="guest-count">Total Confirmed Guests: <span id="guestCount">0</span></p>
+            <ul id="guestList" class="guest-list">
+                <li class="no-guests">No RSVPs yet. Be the first!</li>
+            </ul>
+        </section>
+
+        <section class="card activities">
+            <h2>🎮 Party Games & Activities</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <span class="activity-icon">🎲</span>
+                    <h3>Christmas Trivia</h3>
+                    <p>Test your knowledge of Christmas traditions!</p>
+                </div>
+                <div class="activity-card">
+                    <span class="activity-icon">🎵</span>
+                    <h3>Name That Carol</h3>
+                    <p>Guess the Christmas song from the first few notes!</p>
+                </div>
+                <div class="activity-card">
+                    <span class="activity-icon">🎨</span>
+                    <h3>Ornament Decorating</h3>
+                    <p>Create your own custom Christmas ornament!</p>
+                </div>
+                <div class="activity-card">
+                    <span class="activity-icon">🍪</span>
+                    <h3>Cookie Decorating</h3>
+                    <p>Decorate delicious Christmas cookies!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>🎄 Merry Christmas & Happy Holidays! 🎅</p>
+            <p class="footer-note">Looking forward to celebrating with you!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
