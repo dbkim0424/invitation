@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Eve Party Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f1c2e 100%);
+            font-family: 'Noto Sans KR', sans-serif;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .card {
+            width: 500px;
+            height: 700px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 30px;
+            position: relative;
+            z-index: 10;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+        }
+
+        .card::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .card::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        .card::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 10px;
+        }
+
+        .card::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="50" font-size="40" opacity="0.1" fill="white">❄</text><text x="60" y="80" font-size="30" opacity="0.1" fill="white">★</text></svg>');
+            opacity: 0.3;
+        }
+
+        .header-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .card-header .subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .card-body {
+            padding: 40px 35px;
+        }
+
+        .invitation-text {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .invitation-text p {
+            font-size: 15px;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .invitation-text .highlight {
+            font-weight: 500;
+            color: #dc2626;
+        }
+
+        .info-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #78350f;
+            font-weight: 500;
+            margin-bottom: 3px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: #451a03;
+            font-weight: 500;
+        }
+
+        .guests-section {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .guests-title {
+            font-size: 14px;
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .guest-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+        }
+
+        .guest-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .guest-item:hover {
+            transform: translateX(5px);
+        }
+
+        .guest-icon {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        .guest-name {
+            font-size: 15px;
+            color: #1e3a8a;
+            font-weight: 500;
+        }
+
+        .tree-decoration {
+            text-align: center;
+            margin: 25px 0;
+            font-size: 40px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                opacity: 0.7;
+                filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.5));
+            }
+            50% { 
+                opacity: 1;
+                filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.8));
+            }
+        }
+
+        .footer-message {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(185, 28, 28, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .footer-message p {
+            font-size: 14px;
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .footer-message .emoji {
+            font-size: 20px;
+            margin: 0 5px;
+        }
+
+        .host-signature {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+
+        /* Snowflakes */
+        .snowflake {
+            position: absolute;
+            color: rgba(220, 38, 38, 0.2);
+            font-size: 20px;
+            animation: fall linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(710px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .snowflake:nth-child(1) { left: 10%; animation-duration: 10s; animation-delay: 0s; }
+        .snowflake:nth-child(2) { left: 30%; animation-duration: 12s; animation-delay: 2s; }
+        .snowflake:nth-child(3) { left: 50%; animation-duration: 9s; animation-delay: 4s; }
+        .snowflake:nth-child(4) { left: 70%; animation-duration: 11s; animation-delay: 1s; }
+        .snowflake:nth-child(5) { left: 90%; animation-duration: 10s; animation-delay: 3s; }
+
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="stars" id="stars"></div>
+
+    <div class="card">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+
+        <div class="card-header">
+            <div class="header-icon">🎄</div>
+            <h1 class="fade-in">Christmas Eve</h1>
+            <div class="subtitle fade-in">HOME PARTY</div>
+        </div>
+
+        <div class="card-body">
+            <div class="invitation-text fade-in">
+                <p>따뜻한 크리스마스 이브,</p>
+                <p>소중한 분들을 우리 집으로 초대합니다</p>
+                <p class="highlight">함께 특별한 시간을 보내요! ✨</p>
+            </div>
+
+            <div class="info-section fade-in">
+                <div class="info-item">
+                    <div class="info-icon">📅</div>
+                    <div class="info-content">
+                        <div class="info-label">DATE</div>
+                        <div class="info-value">2025년 12월 24일 (화)</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-content">
+                        <div class="info-label">TIME</div>
+                        <div class="info-value">19:30</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <div class="info-label">PLACE</div>
+                        <div class="info-value">태성대아파트 105동 303호</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tree-decoration">🎁</div>
+
+            <div class="guests-section fade-in">
+                <div class="guests-title">🌟 초대 손님 🌟</div>
+                <div class="guest-item">
+                    <div class="guest-icon">💕</div>
+                    <div class="guest-name">이슬 님</div>
+                </div>
+                <div class="guest-item">
+                    <div class="guest-icon">🎅</div>
+                    <div class="guest-name">이용우 님</div>
+                </div>
+            </div>
+
+            <div class="footer-message fade-in">
+                <p>맛있는 음식과 즐거운 이야기가 준비되어 있습니다</p>
+                <p><span class="emoji">🍷</span> <span class="emoji">🍕</span> <span class="emoji">🎂</span></p>
+                <p style="margin-top: 12px; font-weight: 500; color: #dc2626;">
+                    편안한 마음으로 오세요!
+                </p>
+            </div>
+
+            <div class="host-signature fade-in">
+                HOST. 🎄문기현❤️김단비 🎄
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate random stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
